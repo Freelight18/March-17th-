@@ -23,7 +23,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            max-width: 800px;
+            max-width: 90%;
+            width: 800px;
             position: relative;
             padding: 20px;
             color: #333;
@@ -41,12 +42,12 @@
             opacity: 1;
         }
         h1 {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #222;
         }
         p {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             line-height: 1.8;
             color: #333;
         }
@@ -63,15 +64,15 @@
         }
         .slide-nav {
             position: absolute;
-            bottom: 20px;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
         }
         .slide-nav .dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             background: rgba(255, 255, 255, 0.5);
             border-radius: 50%;
             cursor: pointer;
@@ -83,7 +84,7 @@
         }
         .heart {
             position: absolute;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             color: #ff6f61;
             animation: float 4s ease-in-out infinite;
         }
@@ -91,6 +92,25 @@
             0% { transform: translateY(0) scale(1); opacity: 1; }
             50% { transform: translateY(-30px) scale(1.2); opacity: 0.7; }
             100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .content-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-button {
+                position: absolute;
+                bottom: 50px;
+                font-size: 1.5rem;
+            }
+            .nav-button.prev { left: 10px; }
+            .nav-button.next { right: 10px; }
+            p { font-size: 1.2rem; }
+            h1 { font-size: 2rem; }
+            .slide-nav { bottom: 5px; }
+            .heart { font-size: 1rem; }
         }
     </style>
 </head>
@@ -110,7 +130,7 @@
             <p>Time never stops, yet some moments remain timeless. And you—your kindness, your warmth, and the way you light up the world—are one of those rare, beautiful moments. March 17th isn’t just a date anymore; it’s a day that will always hold a special place in my heart because it belongs to someone as wonderful as you—the day you came into this world, making it forever special to me.</p>
         </div>
         <div class="text-container">
-            <p>Happy Birthday! 🎂🎉 May this day bring you as much joy as you have brought into my life. I hope you have a wonderful time today, tomorrow, and in all the days to come—may your heart be light, your dreams be bright, and your smile never fade.</p>
+            <p>Happy Birthday! 🎂✨ May this day bring you as much joy as you have brought into my life. I hope you have a wonderful time today, tomorrow, and in all the days to come—may your heart be light, your dreams be bright, and your smile never fade.</p>
         </div>
         <button class="nav-button next" onclick="nextSlide()">❯</button>
     </div>
@@ -127,7 +147,6 @@
     <div class="heart" style="top: 20%; left: 90%; animation-delay: 0.5s;">❤️</div>
     <div class="heart" style="top: 80%; left: 15%; animation-delay: 1s;">❤️</div>
     <div class="heart" style="top: 70%; left: 85%; animation-delay: 1.5s;">❤️</div>
-    
 
     <script>
         let slides = [];
